@@ -1,0 +1,17 @@
+{
+    "actor-start": {
+        "eventTitle": "Search Initiated",
+        "eventDescription": "Flat fee for starting a real estate search.",
+        "eventPriceUsd": 0.1
+    },
+    "property-found": {
+        "eventTitle": "Property Found",
+        "eventDescription": "Fee for each property matching your criteria.",
+        "eventPriceUsd": 0.05
+    },
+    "search-completed": {
+        "eventTitle": "Search Completed",
+        "eventDescription": "Fee for completing a full property search across all selected platforms.",
+        "eventPriceUsd": 0.3
+    }
+} 

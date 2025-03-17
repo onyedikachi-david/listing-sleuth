@@ -1,0 +1,85 @@
+{
+    "title": "Listing Sleuth - Real Estate Monitor",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "location": {
+            "title": "Location",
+            "type": "string",
+            "description": "City or neighborhood to search in (e.g., 'San Francisco, CA')",
+            "editor": "textfield"
+        },
+        "propertyType": {
+            "title": "Property Type",
+            "type": "string",
+            "description": "Type of property to look for",
+            "enum": ["apartment", "house", "condo", "townhouse", "any"],
+            "enumTitles": ["Apartment", "House", "Condo", "Townhouse", "Any"],
+            "default": "any",
+            "editor": "select"
+        },
+        "minBedrooms": {
+            "title": "Minimum Bedrooms",
+            "type": "integer",
+            "description": "Minimum number of bedrooms",
+            "default": 1,
+            "minimum": 0,
+            "editor": "number"
+        },
+        "maxBedrooms": {
+            "title": "Maximum Bedrooms",
+            "type": "integer",
+            "description": "Maximum number of bedrooms (leave blank for no maximum)",
+            "minimum": 0,
+            "nullable": true,
+            "editor": "number"
+        },
+        "minPrice": {
+            "title": "Minimum Price",
+            "type": "integer",
+            "description": "Minimum price (in USD)",
+            "default": 0,
+            "minimum": 0,
+            "editor": "number"
+        },
+        "maxPrice": {
+            "title": "Maximum Price",
+            "type": "integer",
+            "description": "Maximum price (in USD)",
+            "minimum": 0,
+            "nullable": true,
+            "editor": "number"
+        },
+        "amenities": {
+            "title": "Amenities",
+            "type": "array",
+            "description": "Desired amenities for the property",
+            "editor": "stringList",
+            "default": []
+        },
+        "searchType": {
+            "title": "Search Type",
+            "type": "string",
+            "description": "Type of search to perform",
+            "enum": ["rent", "buy"],
+            "enumTitles": ["Rent", "Buy"],
+            "default": "rent",
+            "editor": "select"
+        },
+        "sources": {
+            "title": "Data Sources",
+            "type": "array",
+            "description": "Sources to search for listings",
+            "editor": "stringList",
+            "default": ["zillow", "realtor", "apartments"]
+        },
+        "llmApiToken": {
+            "title": "LLM API Token",
+            "type": "string",
+            "description": "OpenAI API token for processing results (optional)",
+            "editor": "textfield",
+            "nullable": true
+        }
+    },
+    "required": ["location"]
+}

@@ -1,0 +1,10 @@
+apify
+crawlee[playwright]
+langchain
+langchain-openai
+crewai
+beautifulsoup4
+openai
+python-dotenv
+apify-client
+tenacity

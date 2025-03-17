@@ -1,0 +1,11 @@
+{
+  "location": "San Francisco, CA",
+  "propertyType": "apartment",
+  "minBedrooms": 2,
+  "maxBedrooms": 3,
+  "minPrice": 1500,
+  "maxPrice": 3000,
+  "amenities": ["parking", "gym"],
+  "searchType": "rent",
+  "sources": ["zillow", "apartments"]
+} 

@@ -1,0 +1,19 @@
+{
+	"actorSpecification": 1,
+	"name": "listing-sleuth",
+	"title": "Listing Sleuth - Real Estate Monitor",
+	"description": "Monitors real estate listings across multiple platforms based on user-specified criteria",
+	"version": "0.1",
+	"buildTag": "latest",
+	"restart": {
+		"horizontalScaling": true
+	},
+	"dockerfile": "./Dockerfile",
+	"input": "./input_schema.json",
+	"license": "MIT",
+	"monetization": {
+		"type": "pay-per-event",
+		"enabled": true,
+		"priceSchemaPath": "./pay_per_event.json"
+	}
+}
