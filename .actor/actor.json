@@ -10,6 +10,9 @@
 	},
 	"dockerfile": "./Dockerfile",
 	"input": "./input_schema.json",
+	"storages": {
+		"dataset": "./dataset_schema.json"
+	},
 	"license": "MIT",
 	"monetization": {
 		"type": "pay-per-event",

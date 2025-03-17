@@ -1,76 +1,167 @@
 {
-    "title": "Property Listings",
-    "description": "Real estate property listings matching the search criteria",
-    "type": "object",
-    "schemaVersion": 1,
-    "properties": {
-        "id": {
-            "title": "ID",
-            "type": "string",
-            "description": "Unique identifier for the property listing"
-        },
-        "title": {
-            "title": "Title",
-            "type": "string",
-            "description": "Property title or name"
-        },
-        "description": {
-            "title": "Description",
-            "type": "string",
-            "description": "Detailed description of the property"
-        },
-        "price": {
-            "title": "Price",
-            "type": "number",
-            "description": "Price of the property (in USD)"
-        },
-        "bedrooms": {
-            "title": "Bedrooms",
-            "type": "number",
-            "description": "Number of bedrooms"
-        },
-        "bathrooms": {
-            "title": "Bathrooms",
-            "type": "number",
-            "description": "Number of bathrooms"
-        },
-        "address": {
-            "title": "Address",
-            "type": "string",
-            "description": "Property address"
-        },
-        "property_type": {
-            "title": "Property Type",
-            "type": "string",
-            "description": "Type of property (apartment, house, condo, etc.)"
-        },
-        "source": {
-            "title": "Source",
-            "type": "string",
-            "description": "Source of the listing (zillow, realtor, apartments, etc.)"
-        },
-        "url": {
-            "title": "URL",
-            "type": "string",
-            "description": "Link to the original listing"
-        },
-        "amenities": {
-            "title": "Amenities",
-            "type": "array",
-            "description": "List of amenities available at the property",
-            "items": {
-                "type": "string"
+    "actorSpecification": 1,
+    "fields": {
+        "type": "object",
+        "properties": {
+            "id": {
+                "type": "string",
+                "description": "Unique identifier for the property listing"
+            },
+            "title": {
+                "type": "string",
+                "description": "Property title or name"
+            },
+            "description": {
+                "type": "string",
+                "description": "Detailed description of the property"
+            },
+            "price": {
+                "type": "number",
+                "description": "Price of the property (in USD)"
+            },
+            "bedrooms": {
+                "type": "number",
+                "description": "Number of bedrooms"
+            },
+            "bathrooms": {
+                "type": "number",
+                "description": "Number of bathrooms"
+            },
+            "address": {
+                "type": "string",
+                "description": "Property address"
+            },
+            "property_type": {
+                "type": "string",
+                "description": "Type of property (apartment, house, condo, etc.)"
+            },
+            "source": {
+                "type": "string",
+                "description": "Source of the listing (zillow, realtor, apartments, etc.)"
+            },
+            "url": {
+                "type": "string",
+                "description": "Link to the original listing"
+            },
+            "amenities": {
+                "type": "array",
+                "description": "List of amenities available at the property",
+                "items": {
+                    "type": "string"
+                }
+            },
+            "listed_date": {
+                "type": "string",
+                "description": "Date when the property was listed"
+            },
+            "is_new": {
+                "type": "boolean",
+                "description": "Whether this is a new listing since last search"
+            }
+        }
+    },
+    "views": {
+        "overview": {
+            "title": "Property Listings",
+            "description": "Real estate property listings matching the search criteria",
+            "transformation": {
+                "fields": [
+                    "id",
+                    "title",
+                    "price",
+                    "bedrooms",
+                    "bathrooms",
+                    "address",
+                    "property_type",
+                    "source",
+                    "url",
+                    "listed_date",
+                    "is_new"
+                ]
+            },
+            "display": {
+                "component": "table",
+                "properties": {
+                    "id": {
+                        "label": "ID",
+                        "format": "text"
+                    },
+                    "title": {
+                        "label": "Title",
+                        "format": "text"
+                    },
+                    "price": {
+                        "label": "Price",
+                        "format": "number"
+                    },
+                    "bedrooms": {
+                        "label": "Bedrooms",
+                        "format": "number"
+                    },
+                    "bathrooms": {
+                        "label": "Bathrooms",
+                        "format": "number"
+                    },
+                    "address": {
+                        "label": "Address",
+                        "format": "text"
+                    },
+                    "property_type": {
+                        "label": "Property Type",
+                        "format": "text"
+                    },
+                    "source": {
+                        "label": "Source",
+                        "format": "text"
+                    },
+                    "url": {
+                        "label": "URL",
+                        "format": "link"
+                    },
+                    "listed_date": {
+                        "label": "Listed Date",
+                        "format": "date"
+                    },
+                    "is_new": {
+                        "label": "New Listing",
+                        "format": "boolean"
+                    }
+                }
             }
         },
-        "listed_date": {
-            "title": "Listed Date",
-            "type": "string",
-            "description": "Date when the property was listed"
-        },
-        "is_new": {
-            "title": "Is New",
-            "type": "boolean",
-            "description": "Whether this is a new listing since last search"
+        "details": {
+            "title": "Detailed View",
+            "description": "Detailed information about property listings",
+            "transformation": {
+                "fields": [
+                    "id",
+                    "title",
+                    "description",
+                    "price",
+                    "bedrooms",
+                    "bathrooms",
+                    "address",
+                    "property_type",
+                    "source",
+                    "url",
+                    "amenities",
+                    "listed_date",
+                    "is_new"
+                ]
+            },
+            "display": {
+                "component": "table",
+                "properties": {
+                    "description": {
+                        "label": "Description",
+                        "format": "text"
+                    },
+                    "amenities": {
+                        "label": "Amenities",
+                        "format": "array"
+                    }
+                }
+            }
         }
     }
 } 
